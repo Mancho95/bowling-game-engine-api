@@ -23,8 +23,8 @@ public class Attempt  implements Serializable {
 	@Column(name = "knocked_pins")
 	private int knockedPins;
 	
-	@Column(name = "attempt_number")
-	private int attemptNumber;
+	@Column(name = "attempt_index")
+	private int attemptIndex;
 
 	public String getAttemptId() {
 		return attemptId;
@@ -50,12 +50,12 @@ public class Attempt  implements Serializable {
 		this.knockedPins = knockedPins;
 	}
 
-	public int getAttemptNumber() {
-		return attemptNumber;
+	public int getAttemptIndex() {
+		return attemptIndex;
 	}
 
-	public void setAttemptNumber(int attemptNumber) {
-		this.attemptNumber = attemptNumber;
+	public void setAttemptIndex(int attemptIndex) {
+		this.attemptIndex = attemptIndex;
 	}
 
 }
