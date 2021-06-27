@@ -3,7 +3,6 @@ package com.cgmassessment.bowlinggameengineapi.domain;
 import javax.persistence.*;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "game")
@@ -21,11 +20,11 @@ public class Game  implements Serializable {
 	@Column(name = "player_id")
 	private String playerId;
 	
+	@Column(name = "match_id")
+	private String matchId;
+	
 	@Column(name = "game_score")
 	private int gameScore;
-	
-	@Column(name = "game_date")
-	private LocalDateTime gameDate;
 
 	public String getGameId() {
 		return gameId;
@@ -42,6 +41,14 @@ public class Game  implements Serializable {
 	public void setPlayerId(String playerId) {
 		this.playerId = playerId;
 	}
+	
+	public String getMatchId() {
+		return matchId;
+	}
+
+	public void setMatchId(String matchId) {
+		this.matchId = matchId;
+	}
 
 	public int getGameScore() {
 		return gameScore;
@@ -49,14 +56,6 @@ public class Game  implements Serializable {
 
 	public void setGameScore(int gameScore) {
 		this.gameScore = gameScore;
-	}
-
-	public LocalDateTime getGameDate() {
-		return gameDate;
-	}
-
-	public void setGameDate(LocalDateTime gameDate) {
-		this.gameDate = gameDate;
 	}
 	
 }
