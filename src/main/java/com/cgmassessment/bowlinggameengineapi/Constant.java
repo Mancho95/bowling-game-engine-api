@@ -5,6 +5,7 @@ public class Constant {
 	public static final String EXTENDED_DB_DATE = "yyyyMMddHHmmssSSS";
 	
 	//Json fields
+	public static final String ERROR = "error";
 	public static final String PLAYER_ID = "player_id";
 	public static final String NAME = "name";
 	public static final String SURNAME = "surname";
@@ -15,5 +16,5 @@ public class Constant {
 	//Error messages
 	public static final String ERROR_EVENT_EVENTSRECORDID = "No events for that eventsRecordId";
 	public static final String UNEXPECTED_ERROR = "Unexpected error";
-	
+
 }
