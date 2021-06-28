@@ -22,10 +22,13 @@ public class Player  implements Serializable {
 	private String name;
 	
 	@Column(name = "surname")
-	private Integer surname;
+	private String surname;
 	
-	@Column(name = "birth_date")
-	private LocalDateTime birthDate;
+	@Column(name = "nickname")
+	private String nickname;
+	
+	@Column(name = "sign_up_date")
+	private LocalDateTime signUpDate;
 
 	public String getPlayerId() {
 		return playerId;
@@ -43,20 +46,28 @@ public class Player  implements Serializable {
 		this.name = name;
 	}
 
-	public Integer getSurname() {
+	public String getSurname() {
 		return surname;
 	}
 
-	public void setSurname(Integer surname) {
+	public void setSurname(String surname) {
 		this.surname = surname;
 	}
-
-	public LocalDateTime getBirthDate() {
-		return birthDate;
+	
+	public String getNickname() {
+		return nickname;
 	}
 
-	public void setBirthDate(LocalDateTime birthDate) {
-		this.birthDate = birthDate;
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+
+	public LocalDateTime getSignUpDate() {
+		return signUpDate;
+	}
+
+	public void setSignUpDate(LocalDateTime signUpDate) {
+		this.signUpDate = signUpDate;
 	}
 
 }

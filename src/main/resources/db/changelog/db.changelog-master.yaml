@@ -1,0 +1,16 @@
+  databaseChangeLog:
+  - include:
+      file: migrations/001.createMatchTable.sql
+      relativeToChangelogFile: true
+  - include:
+      file: migrations/002.createPlayerTable.sql
+      relativeToChangelogFile: true
+  - include:
+      file: migrations/003.createGameTable.sql
+      relativeToChangelogFile: true
+  - include:
+      file: migrations/004.createFrameTable.sql
+      relativeToChangelogFile: true
+  - include:
+      file: migrations/005.createAttemptTable.sql
+      relativeToChangelogFile: true
