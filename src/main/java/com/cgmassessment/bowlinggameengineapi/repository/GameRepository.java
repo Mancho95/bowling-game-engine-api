@@ -13,8 +13,12 @@ public interface GameRepository extends JpaRepository<Game, String> {
 	
 	Game findFirstByPlayerId(String playerId);
 	
+	Game findFirstByPlayerIdOrderByGameScore(String playerId);
+	
 	Game findFirstOrderByGameScore();
 	
-	List<Game> findAllByMatchIdOrderByGameScore();
+	List<Game> findAllOrderByGameScore();
+	
+	List<Game> findAllByMatchIdOrderByGameScore(String matchId);
 	
   }

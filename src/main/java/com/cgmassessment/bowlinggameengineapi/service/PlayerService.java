@@ -18,6 +18,9 @@ public class PlayerService {
 	@Autowired
 	PlayerRepository playerRepository;
 	
+	@Autowired
+	GameService gameService;
+	
 	public ObjectNode createNewPlayer(ObjectNode playerValues) {
 		ObjectNode result = JsonHelper.getEmptyObjectNode();
 		try {
@@ -48,6 +51,39 @@ public class PlayerService {
 			}
 		} catch(Exception e){
 			System.out.println("Changing nickname of player " + playerId + " went wrong" + e.toString());
+		}
+		return result;
+	}
+	
+	public ObjectNode getPlayerWithHigherScoreAndGame() {
+		ObjectNode result = JsonHelper.getEmptyObjectNode();
+		try {
+			ObjectNode bestScoreGame = gameService.getGameWithHigherScore();
+			if(bestScoreGame != null && bestScoreGame.has(Constant.GAME)) {
+				ObjectNode bestScoreGameObject = JsonHelper.getAsObject(bestScoreGame, Constant.GAME);
+				if(bestScoreGameObject.has(Constant.PLAYER_ID)) {
+					String playerId = JsonHelper.getString(bestScoreGameObject, Constant.PLAYER_ID);
+					if(playerId != null) {
+						Player playerWithRecord = playerRepository.findFirstByPlayerId(playerId);
+						if(playerWithRecord != null) {
+							result = buildPlayerObjectNodeFromObject(playerWithRecord);
+							result.set(Constant.GAME, bestScoreGame);
+						} else {
+							result.put(Constant.ERROR, "No player with saved player id in best game");
+						}
+					} else {
+						result.put(Constant.ERROR, "Error on player id");
+					}
+				} else {
+					result.put(Constant.ERROR, "Best score game has no player id");
+				}
+			} else if(bestScoreGame != null && bestScoreGame.has(Constant.ERROR)) {
+				result.put(Constant.ERROR, bestScoreGame.get(Constant.ERROR).toString());
+			} else {
+				result.put(Constant.ERROR, Constant.UNEXPECTED_ERROR);
+			}
+		} catch(Exception e){
+			System.out.println("Getting player with higher score went wrong" + e.toString());
 		}
 		return result;
 	}
