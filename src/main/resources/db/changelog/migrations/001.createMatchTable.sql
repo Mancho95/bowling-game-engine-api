@@ -5,6 +5,7 @@ create table match
 (
 	match_id text primary key,	
   	match_winner_id text NOT NULL,
+  	match_winner_nickname text NOT NULL,
   	match_date varchar(50)
 );
 --rollback not required

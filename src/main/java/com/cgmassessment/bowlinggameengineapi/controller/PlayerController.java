@@ -31,7 +31,7 @@ public class PlayerController {
 				ObjectNode savedPlayer = playerService.createNewPlayer(playerValues);
 				if(savedPlayer != null && savedPlayer.has(Constant.ERROR)) {
 					result.put(Constant.ERROR, savedPlayer.get(Constant.ERROR).toString());
-				} else if(savedPlayer != null && savedPlayer.has(Constant.PLAYER)) {
+				} else if(savedPlayer != null && savedPlayer.has(Constant.PLAYER_ID)) {
 					result = savedPlayer;
 				} else {
 					result.put(Constant.ERROR, Constant.UNEXPECTED_ERROR);
@@ -51,7 +51,7 @@ public class PlayerController {
 		ObjectNode editedPlayer = playerService.editPlayerNickname(playerId, newNickname);
 		if(editedPlayer != null && editedPlayer.has(Constant.ERROR)) {
 			result.put(Constant.ERROR, editedPlayer.get(Constant.ERROR).toString());
-		} else if(editedPlayer != null && editedPlayer.has(Constant.PLAYER)) {
+		} else if(editedPlayer != null && editedPlayer.has(Constant.PLAYER_ID)) {
 			result = editedPlayer;
 		} else {
 			result.put(Constant.ERROR, Constant.UNEXPECTED_ERROR);

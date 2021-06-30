@@ -14,7 +14,7 @@ public interface GameRepository extends JpaRepository<Game, String> {
 	
 	Game findFirstByPlayerId(String playerId);
 	
-	Game findFirstByPlayerIdOrderByGameScore(String playerId);
+	Game findFirstByPlayerIdOrderByGameScoreDesc(String playerId);
 	
 	@Query(nativeQuery = true, value ="select * from game order by game_score desc limit 1")
 	Game findFirstOrderByGameScore();

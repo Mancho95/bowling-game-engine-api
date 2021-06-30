@@ -21,6 +21,9 @@ public class Match  implements Serializable {
 	@Column(name = "match_winner_id")
 	private String matchWinnerId;
 	
+	@Column(name = "match_winner_nickname")
+	private String matchWinnerNickname;
+	
 	@Column(name = "match_date")
 	private LocalDateTime matchDate;
 
@@ -33,11 +36,19 @@ public class Match  implements Serializable {
 	}
 	
 	public String getMatchWinnerId() {
-		return matchId;
+		return matchWinnerId;
 	}
 
 	public void setMatchWinnerId(String matchWinnerId) {
 		this.matchWinnerId = matchWinnerId;
+	}
+	
+	public String getMatchWinnerNickname() {
+		return matchWinnerNickname;
+	}
+
+	public void setMatchWinnerNickname(String matchWinnerNickname) {
+		this.matchWinnerNickname = matchWinnerNickname;
 	}
 
 	public LocalDateTime getMatchDate() {

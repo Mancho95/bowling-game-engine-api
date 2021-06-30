@@ -42,9 +42,9 @@ public class GameService {
 	public ObjectNode getGameWithHigherScoreFromPlayerId(String playerId) {
 		ObjectNode result = JsonHelper.getEmptyObjectNode();
 		try {
-			Game gameWithHigherScoreFromPlayerId = gameRepository.findFirstByPlayerIdOrderByGameScore(playerId);
+			Game gameWithHigherScoreFromPlayerId = gameRepository.findFirstByPlayerIdOrderByGameScoreDesc(playerId);
 			if(gameWithHigherScoreFromPlayerId != null) {
-				result = buildGameObjectNodeFromObject(gameWithHigherScoreFromPlayerId);
+				result.set(Constant.GAME, buildGameObjectNodeFromObject(gameWithHigherScoreFromPlayerId));
 			} else {
 				result.put(Constant.ERROR, "No game with higher score for that player id");
 			}

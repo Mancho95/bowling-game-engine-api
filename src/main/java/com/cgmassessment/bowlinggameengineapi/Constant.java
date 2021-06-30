@@ -38,6 +38,9 @@ public class Constant {
 	public static final String FRAME_INDEX = "frame_index";
 	public static final String RECALCULATE = "recalculate";
 	public static final String FRAMES = "frames";
+	public static final String GAMES = "games";
+	public static final String MATCH_WINNER_NICKNAME = "match_winner_nickname";
+	public static final String OLD_NICKNAME = "old_nickname";
 	
 	//Frame types
 	public static final String STRIKE = "strike";

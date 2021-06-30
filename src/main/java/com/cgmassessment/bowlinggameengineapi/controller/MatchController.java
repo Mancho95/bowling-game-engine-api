@@ -30,7 +30,7 @@ public class MatchController {
 				ObjectNode match = matchService.newMatch(playersArray);
 				if(match != null && match.has(Constant.ERROR)) {
 					result.put(Constant.ERROR, match.get(Constant.ERROR).toString());
-				} else if(match != null && match.has(Constant.MATCH) && match.has(Constant.GAME)) {
+				} else if(match != null && match.has(Constant.MATCH) && match.has(Constant.GAMES)) {
 					result = match;
 				} else {
 					result.put(Constant.ERROR, Constant.UNEXPECTED_ERROR);
