@@ -4,8 +4,8 @@
 create table match
 (
 	match_id text primary key,	
-  	match_winner text NOT NULL,
-  	match_date varchar(17)
+  	match_winner_id text NOT NULL,
+  	match_date varchar(50)
 );
 --rollback not required
 
@@ -14,5 +14,5 @@ create index match_match_id on match(match_id);
 --rollback not required
 
 --changeset francesco:3
-create index match_match_winner on match(match_winner);
+create index match_match_winner_id on match(match_winner_id);
 --rollback not required

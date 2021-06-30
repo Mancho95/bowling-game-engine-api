@@ -7,7 +7,7 @@ create table player
 	name text NOT NULL,
 	surname text NOT NULL,
 	nickname text NOT NULL,
-  	sign_up_date varchar(17)
+  	sign_up_date varchar(50)
 );
 --rollback not required
 

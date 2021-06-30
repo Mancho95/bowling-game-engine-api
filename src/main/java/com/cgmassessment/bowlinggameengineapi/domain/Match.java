@@ -22,7 +22,7 @@ public class Match  implements Serializable {
 	private String matchWinnerId;
 	
 	@Column(name = "match_date")
-	private LocalDateTime birthDate;
+	private LocalDateTime matchDate;
 
 	public String getMatchId() {
 		return matchId;
@@ -40,12 +40,12 @@ public class Match  implements Serializable {
 		this.matchWinnerId = matchWinnerId;
 	}
 
-	public LocalDateTime getBirthDate() {
-		return birthDate;
+	public LocalDateTime getMatchDate() {
+		return matchDate;
 	}
 
-	public void setBirthDate(LocalDateTime birthDate) {
-		this.birthDate = birthDate;
+	public void setMatchDate(LocalDateTime matchDate) {
+		this.matchDate = matchDate;
 	}
 
 }

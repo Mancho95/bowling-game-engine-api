@@ -6,7 +6,7 @@ create table frame
 	frame_id text primary key,
 	game_id text NOT NULL,
 	frame_type text NOT NULL,
-	frame_score int NOT NULL,
+	frame_score int,
 	frame_index int NOT NULL
 );
 --rollback not required

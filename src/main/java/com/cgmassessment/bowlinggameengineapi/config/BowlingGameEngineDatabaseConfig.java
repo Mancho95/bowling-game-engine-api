@@ -18,8 +18,8 @@ import java.util.HashMap;
 @Configuration
 @EnableJpaRepositories(
     basePackages = "com.cgmassessment.bowlinggameengineapi.repository",
-    entityManagerFactoryRef = "eventEngineEntityManager",
-    transactionManagerRef = "eventEngineTransactionManager")
+    entityManagerFactoryRef = "bowlingGameEngineEntityManager",
+    transactionManagerRef = "bowlingGameEngineTransactionManager")
 public class BowlingGameEngineDatabaseConfig {
 
   @Autowired private Environment env;

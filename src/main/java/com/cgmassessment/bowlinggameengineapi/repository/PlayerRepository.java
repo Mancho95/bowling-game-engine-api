@@ -9,6 +9,4 @@ public interface PlayerRepository extends JpaRepository<Player, String> {
 	
 	Player findFirstByPlayerId(String playerId);
 	
-	Player findFirstByGameId(String gameId);
-	
   }
